@@ -1,7 +1,7 @@
 package edu.mum.cs545.ws;
 
-import org.glassfish.jersey.server.ResourceConfig;  
-   
+import org.glassfish.jersey.server.ResourceConfig;
+
 /** 
  */  
 public class RestApplication extends ResourceConfig {  
