@@ -1,6 +1,5 @@
 package edu.mum.cs545.ws;
 
-import org.codehaus.jackson.jaxrs.JacksonJsonProvider;
 import org.glassfish.jersey.server.ResourceConfig;  
    
 /** 

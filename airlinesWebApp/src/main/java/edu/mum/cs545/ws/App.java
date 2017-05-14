@@ -1,6 +1,11 @@
-package cs545.airline;
+package edu.mum.cs545.ws;
 
 import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 import org.apache.log4j.Logger;
 
@@ -11,7 +16,7 @@ import cs545.airline.model.Airport;
 import cs545.airline.model.Flight;
 import cs545.airline.nonmanaged.JpaUtil;
 import cs545.airline.service.FlightService;
-
+@Path("/app")
 public class App {
 	private static Logger logger = Logger.getLogger(App.class);
 	private FlightService flightService;
@@ -33,7 +38,26 @@ public class App {
 		flightService = new FlightService(new FlightDao());
 	}
 
-	public void run() {
+//	public void run() {
+//
+//		// fill the database
+//		fillDataBase();
+//
+//		// Flights leaving USA capacity > 500
+//
+//		logger.trace("List all the flights:");
+//		List<Flight> flights = flightService.findAll();
+//		logger.trace(String.format("%-9s%-31s%-31s", "Flight:", "Departs:", "Arrives:"));
+//		for (Flight flight : flights) {
+//			logger.trace(String.format("%-7s  %-12s %7s %8s  %-12s %7s %8s", flight.getFlightnr(),
+//					flight.getOrigin().getCity(), flight.getDepartureDate(), flight.getDepartureTime(),
+//					flight.getDestination().getCity(), flight.getArrivalDate(), flight.getArrivalTime()));
+//		}
+//	}
+	@Path("getflights")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Flight> run() {
 
 		// fill the database
 		fillDataBase();
@@ -48,6 +72,7 @@ public class App {
 					flight.getOrigin().getCity(), flight.getDepartureDate(), flight.getDepartureTime(),
 					flight.getDestination().getCity(), flight.getArrivalDate(), flight.getArrivalTime()));
 		}
+		return flights;
 	}
 
 	public void fillDataBase() {

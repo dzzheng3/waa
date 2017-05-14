@@ -1,11 +1,15 @@
 package edu.mum.cs545.ws;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+
 
 @Path("/helloworld")  
 public class RestfulHelloWorld {  
@@ -30,10 +34,16 @@ public class RestfulHelloWorld {
     @GET  
     @Path("/get")  
     @Produces(MediaType.APPLICATION_JSON)  
-    public User sayHelloToUserByJson(@QueryParam("username") String username) {  
+    public List<User> sayHelloToUserByJson(@QueryParam("username") String username) { 
+    	List<User> list = new ArrayList<>();
         User user = new User();  
         user.setId(1);  
         user.setName(username);  
-        return user;  
+        User user1 = new User();  
+        user.setId(1);  
+        user.setName(username);  
+        list.add(user1);
+        list.add(user);
+        return list;  
     }  
 }  

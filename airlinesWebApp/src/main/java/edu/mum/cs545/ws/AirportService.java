@@ -1,4 +1,4 @@
-package cs545.airline.service;
+package edu.mum.cs545.ws;
 
 import java.util.List;
 
