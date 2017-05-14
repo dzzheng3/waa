@@ -39,8 +39,6 @@ public class HelloRest {
 		return result;
 	}
 
-	
-	
 	@GET
 	@Path("/get")
 	@Produces(MediaType.APPLICATION_JSON)
