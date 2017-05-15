@@ -5,7 +5,7 @@
 	<artifactId>airlineJsf</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>lab4 Maven Webapp</name>
+	<name>airlineJsf Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -55,6 +55,6 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>lab4</finalName>
+		<finalName>airlineJsf</finalName>
 	</build>
 </project>
